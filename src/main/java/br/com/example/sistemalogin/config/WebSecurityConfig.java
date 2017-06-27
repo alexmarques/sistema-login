@@ -32,6 +32,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Override
+    public void configure(WebSecurity web) throws Exception {
+        web.ignoring().antMatchers("/webjars/**");
+            
+    }
+
+    @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
             .authorizeRequests()
